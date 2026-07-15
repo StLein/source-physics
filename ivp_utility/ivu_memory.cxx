@@ -102,7 +102,7 @@ void p_free(void *data) {
 #endif
 }
 
-constexpr inline uint IVP_MEMORY_MAGIC{0x65981234U};
+constexpr uint IVP_MEMORY_MAGIC{0x65981234U};
 
 struct IVP_Aligned_Memory {
   uint magic_number;

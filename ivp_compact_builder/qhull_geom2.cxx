@@ -1015,8 +1015,8 @@ setT *qh_maxmin(pointT *points, int numpoints, int dimension) {
   qh min_vertex = 0.0;
   qh WAScoplanar = False;
   if (qh ZEROcentrum) qh ZEROall_ok = True;
-  if constexpr (REALmin < REALepsilon && REALmin < REALmax &&
-                REALmin > -REALmax && REALmax > 0.0 && -REALmax < 0.0)
+  if (REALmin < REALepsilon && REALmin < REALmax && REALmin > -REALmax &&
+      REALmax > 0.0 && -REALmax < 0.0)
     ; /* all ok */
   else {
     ivp_message(

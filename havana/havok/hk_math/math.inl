@@ -143,7 +143,7 @@ inline hk_real hk_Math::pow(hk_real r, hk_real p) {
 
 inline hk_real hk_Math::clamp(hk_real r, hk_real mn, hk_real mx) {
   HK_ASSERT(mn <= mx);
-  return std::clamp(r, mn, mx);
+  return (r < mn) ? mn : (r > mx ? mx : r);
 }
 
 inline int hk_Math::int_log2(hk_real) { return 0; }

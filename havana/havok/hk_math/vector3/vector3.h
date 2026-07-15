@@ -93,13 +93,13 @@ class hk_Vector3 {
 #ifndef _LINUX
   // dimhotepus: Better DirectX math integration.
   inline DirectX::XMFLOAT4A* XmBase() {
-    static_assert(sizeof(DirectX::XMFLOAT4A) == sizeof(*this));
-    static_assert(alignof(DirectX::XMFLOAT4A) == alignof(hk_Vector3));
+    static_assert(sizeof(DirectX::XMFLOAT4A) == sizeof(*this), "Size mismatch");
+    static_assert(alignof(DirectX::XMFLOAT4A) == alignof(hk_Vector3), "Alignment mismatch");
     return reinterpret_cast<DirectX::XMFLOAT4A*>(&x);
   }
   inline const DirectX::XMFLOAT4A* XmBase() const {
-    static_assert(sizeof(DirectX::XMFLOAT4A) == sizeof(*this));
-    static_assert(alignof(DirectX::XMFLOAT4A) == alignof(hk_Vector3));
+    static_assert(sizeof(DirectX::XMFLOAT4A) == sizeof(*this), "Size mismatch");
+    static_assert(alignof(DirectX::XMFLOAT4A) == alignof(hk_Vector3), "Alignment mismatch");
     return reinterpret_cast<const DirectX::XMFLOAT4A*>(&x);
   }
 #endif

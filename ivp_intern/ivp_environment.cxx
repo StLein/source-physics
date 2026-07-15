@@ -76,8 +76,8 @@ IVP_Environment::IVP_Environment(IVP_Environment_Manager *manager,
                                  const char *company_name,
                                  unsigned int auth_code) {
   // dimhotepus: static_assert instead of assert in runtime.
-  static_assert(sizeof(IVP_Compact_Edge) == 4);
-  static_assert(sizeof(IVP_Compact_Triangle) == 16);
+  static_assert(sizeof(IVP_Compact_Edge) == 4, "Size mismatch");
+  static_assert(sizeof(IVP_Compact_Triangle) == 16, "Size mismatch");
 
   P_MEM_CLEAR(this);
   get_freeze_manager()->init_freeze_manager();

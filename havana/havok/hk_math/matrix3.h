@@ -87,13 +87,17 @@ class hk_Matrix3 {
 #ifndef _LINUX
   // dimhotepus: Better DirectX math integration.
   inline DirectX::XMFLOAT3X4A* XmBase() {
-    static_assert(sizeof(DirectX::XMFLOAT3X4A) == sizeof(*this));
-    static_assert(alignof(DirectX::XMFLOAT3X4A) == alignof(hk_Matrix3));
+    static_assert(sizeof(DirectX::XMFLOAT3X4A) == sizeof(*this),
+                  "Size mismatch");
+    static_assert(alignof(DirectX::XMFLOAT3X4A) == alignof(hk_Matrix3),
+                  "Alignment mismatch");
     return reinterpret_cast<DirectX::XMFLOAT3X4A*>(&m_elems);
   }
   inline const DirectX::XMFLOAT3X4A* XmBase() const {
-    static_assert(sizeof(DirectX::XMFLOAT3X4A) == sizeof(*this));
-    static_assert(alignof(DirectX::XMFLOAT3X4A) == alignof(hk_Matrix3));
+    static_assert(sizeof(DirectX::XMFLOAT3X4A) == sizeof(*this),
+                  "Size mismatch");
+    static_assert(alignof(DirectX::XMFLOAT3X4A) == alignof(hk_Matrix3),
+                  "Alignment mismatch");
     return reinterpret_cast<const DirectX::XMFLOAT3X4A*>(&m_elems);
   }
 #endif

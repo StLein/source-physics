@@ -91,13 +91,12 @@ using hk_size_t = size_t;  // CK: unsigned long int ..
 #define HK_HAVE_MSVC_INLINE_ASSEMBLY
 #endif
 
-constexpr inline std::nullptr_t HK_NULL{nullptr};
+constexpr std::nullptr_t HK_NULL{nullptr};
 
 //: Note that M must be a power of two for this to work.
 template <typename M, typename P>
-constexpr auto HK_NEXT_MULTIPLE_OF(M m, P p) {
-  M mm{m - 1};
-  return (p + mm) & ~mm;
+constexpr M HK_NEXT_MULTIPLE_OF(M m, P p) {
+  return (p + (m - 1)) & ~(m - 1);
 }
 
 void hk_assert(bool test, const char* cond, int line, const char* file);
@@ -107,8 +106,8 @@ void hk_check(bool test, const char* cond, int line, const char* file);
 enum hk_result { HK_OK, HK_FAULT };
 
 using hk_bool = bool;
-constexpr inline bool HK_FALSE{false};
-constexpr inline bool HK_TRUE{true};
+constexpr bool HK_FALSE{false};
+constexpr bool HK_TRUE{true};
 
 using hk_time = hk_real;
 using hk_sorted_set_store_index = hk_uint16;

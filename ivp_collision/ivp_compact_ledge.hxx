@@ -246,8 +246,8 @@ class IVP_Compact_Ledge {
 
 // ATTENTION: some functions depend on EXACTLY THIS SIZE AND SHAPE of the
 // structure e.g. end of class must be 16 aligned for triangle address trick.
-static_assert(sizeof(IVP_Compact_Ledge) == 16);
-static_assert(sizeof(IVP_Compact_Triangle) == 16);
+static_assert(sizeof(IVP_Compact_Ledge) == 16, "Size mismatch");
+static_assert(sizeof(IVP_Compact_Triangle) == 16, "Size mismatch");
 
 /********************************************************************************
  *	Names:	       	IVP_Compact_Ledgetree_Node

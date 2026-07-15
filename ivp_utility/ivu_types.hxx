@@ -230,7 +230,7 @@ using hk_intp = std::ptrdiff_t;
 using hk_uintp = size_t;
 
 using IVP_ERROR_STRING = const char *;
-constexpr inline std::nullptr_t IVP_NO_ERROR{nullptr};
+constexpr std::nullptr_t IVP_NO_ERROR{nullptr};
 
 #if defined(PSXII) || defined(LINUX) || defined(GEKKO)
 // #   define IVP_ALIGN_16  __attribute__ ((aligned(16)))
@@ -338,10 +338,10 @@ inline void P_MEM_CLEAR_ARRAY(T (&clss)[size], size_t elems) {
 }
 
 // used for division checking
-constexpr inline float P_FLOAT_EPS{1e-10f};
+constexpr float P_FLOAT_EPS{1e-10f};
 // float resolution for numbers < 1.0
-constexpr inline float P_FLOAT_RES{1e-6f};
-constexpr inline float P_FLOAT_MAX{1e16f};
+constexpr float P_FLOAT_RES{1e-6f};
+constexpr float P_FLOAT_MAX{1e16f};
 
 #ifdef IVP_NO_DOUBLE
 #define IVP_PI 3.14159265358979323846f   /* pi */
@@ -352,21 +352,21 @@ constexpr inline float P_FLOAT_MAX{1e16f};
 #define P_DOUBLE_EPS P_FLOAT_EPS    // used for division checking
 #define P_MAX_WORLD_DOUBLE 3000.0f  // max world koords
 #else
-constexpr inline double IVP_PI{3.14159265358979323846};   /* pi */
-constexpr inline double IVP_PI_2{1.57079632679489661923}; /* pi/2 */
-constexpr inline double P_DOUBLE_MAX{1e20};
+constexpr double IVP_PI{3.14159265358979323846};   /* pi */
+constexpr double IVP_PI_2{1.57079632679489661923}; /* pi/2 */
+constexpr double P_DOUBLE_MAX{1e20};
 // double resolution for numbers < 1.0
-constexpr inline double P_DOUBLE_RES{1E-12};
-constexpr inline double IVP_3D_SOLVER_NULLSTELLE_EPS{1e-8};
-constexpr inline double P_DOUBLE_EPS{1e-10};  // used for division checking
-constexpr inline double P_MAX_WORLD_DOUBLE{10000};  // max world koords
+constexpr double P_DOUBLE_RES{1E-12};
+constexpr double IVP_3D_SOLVER_NULLSTELLE_EPS{1e-8};
+constexpr double P_DOUBLE_EPS{1e-10};  // used for division checking
+constexpr double P_MAX_WORLD_DOUBLE{10000};  // max world koords
 #endif
 
-constexpr inline float P_MAX_OBJECT_SIZE{1000.0f};
+constexpr float P_MAX_OBJECT_SIZE{1000.0f};
 // 10 mm min edge len of polygon objects
-constexpr inline float P_MIN_EDGE_LEN{0.01f};
+constexpr float P_MIN_EDGE_LEN{0.01f};
 // effective IVP_DOUBLE resolution for world coords
-constexpr inline float P_RES_EPS{/*P_MAX_WORLD_DOUBLE*/ 10000.0f * P_FLOAT_RES};
+constexpr float P_RES_EPS{/*P_MAX_WORLD_DOUBLE*/ 10000.0f * P_FLOAT_RES};
 
 void ivp_srand(int seed);
 IVP_FLOAT ivp_rand();  // returns [0 .. 1]

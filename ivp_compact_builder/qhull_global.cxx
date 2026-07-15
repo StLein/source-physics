@@ -1373,7 +1373,7 @@ void qh_initqhull_globals(coordT *points, int numpoints, int dim,
     qh_option("_zero-centrum", NULL, NULL);
   }
   if (qh JOGGLEmax < REALmax / 2 && qh PRINTprecision)
-    if constexpr (REALepsilon > 2e-8)
+    if (REALepsilon > 2e-8)
       fprintf(qh ferr,
               "qhull warning: real epsilon, %2.2g, is probably too large for "
               "joggle ('QJn')\nRecompile with double precision reals (see "

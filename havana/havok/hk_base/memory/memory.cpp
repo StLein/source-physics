@@ -11,9 +11,8 @@ struct hk_Memory_With_Size {
   hk_int32 m_dummy[2];
 };
 
-constexpr inline hk_uchar size_to_row(hk_uint16 size) {
-  static_assert(HK_MEMORY_MAX_ROW == 12);
-
+static_assert(HK_MEMORY_MAX_ROW == 12, "HK_MEMORY_MAX_ROW wrong!");
+inline hk_uchar size_to_row(hk_uint16 size) {
   if (size <= 8)
     return 1;
   else if (size <= 16)

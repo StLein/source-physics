@@ -9,8 +9,8 @@
 
 namespace {
 
-constexpr inline double kScaleFactorForReducingPrecisionLoss = 1e6;
-constexpr inline double kInvertedScaleFactorForReducingPrecisionLoss =
+constexpr double kScaleFactorForReducingPrecisionLoss = 1e6;
+constexpr double kInvertedScaleFactorForReducingPrecisionLoss =
     1.0 / kScaleFactorForReducingPrecisionLoss;
 
 }  // namespace

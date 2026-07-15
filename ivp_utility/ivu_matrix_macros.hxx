@@ -43,7 +43,7 @@ void IVP_U_Matrix::inline_mimult4(const IVP_U_Matrix *mb,
 }
 
 void IVP_U_Matrix::get_4x4_column_major(class hk_Transform *o) const {
-  static_assert(sizeof(*o) >= sizeof(hk_real) * 16);
+  static_assert(sizeof(*o) >= sizeof(hk_real) * 16, "Size mismatch");
 
   reinterpret_cast<hk_real *>(o)[0] = get_elem(0, 0);
   reinterpret_cast<hk_real *>(o)[1] = get_elem(1, 0);

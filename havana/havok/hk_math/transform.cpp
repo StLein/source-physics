@@ -26,7 +26,7 @@ void hk_Transform::set_identity_transform() {
 }
 
 void hk_Transform::get_4x4_column_major(hk_Transform *p) const {
-  static_assert(sizeof(*p) >= sizeof(hk_real) * 16);
+  static_assert(sizeof(*p) >= sizeof(hk_real) * 16, "Size mismatch");
   ::memcpy(p, &get_column(0), sizeof(*p));
 
   reinterpret_cast<hk_real *>(p)[3] = 0;
