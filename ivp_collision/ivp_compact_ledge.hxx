@@ -210,6 +210,7 @@ class IVP_Compact_Ledge {
   // grids )
   inline const IVP_Compact_Ledgetree_Node *get_ledgetree_node() const {
     IVP_ASSERT(!is_terminal());
+    if (ledgetree_node_offset == 0) return NULL;
     return (IVP_Compact_Ledgetree_Node *)(((char *)this) +
                                           ledgetree_node_offset);
   }
