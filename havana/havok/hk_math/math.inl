@@ -2,7 +2,7 @@
 #include <hk_math/math_ps2.inl>
 #else  // HK_PS2
 
-#ifdef _LINUX
+#if defined(_LINUX)
 #include <climits>
 #endif
 

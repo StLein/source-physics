@@ -90,7 +90,7 @@ class hk_Vector3 {
   inline hk_real* get_real_pointer() { return &x; }
   inline const hk_real* get_real_pointer() const { return &x; }
 
-#ifndef _LINUX
+#if !defined(_LINUX)
   // dimhotepus: Better DirectX math integration.
   inline DirectX::XMFLOAT4A* XmBase() {
     static_assert(sizeof(DirectX::XMFLOAT4A) == sizeof(*this), "Size mismatch");

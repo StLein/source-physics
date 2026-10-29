@@ -1,11 +1,11 @@
 #ifndef HK_BASE_BASE_TYPES_H
 #define HK_BASE_BASE_TYPES_H
 
-#ifdef _LINUX
+#if defined(_LINUX)
 #include <signal.h>
 #endif
 
-#ifndef _LINUX
+#if !defined(_LINUX)
 #include <DirectXMath.h>
 #endif
 
@@ -75,7 +75,7 @@ using hk_uint64 = unsigned long long int;
 #include <cstddef>
 using hk_size_t = size_t;  // CK: unsigned long int ..
 
-#ifdef _LINUX
+#if defined(_LINUX)
 #define HK_BREAK raise(SIGINT)
 #else
 #define HK_BREAK __debugbreak()

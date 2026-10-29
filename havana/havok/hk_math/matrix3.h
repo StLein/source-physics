@@ -84,7 +84,7 @@ class hk_Matrix3 {
 
   inline const hk_Vector3& get_column(int x) const;
 
-#ifndef _LINUX
+#if !defined(_LINUX)
   // dimhotepus: Better DirectX math integration.
   inline DirectX::XMFLOAT3X4A* XmBase() {
     static_assert(sizeof(DirectX::XMFLOAT3X4A) == sizeof(*this),
